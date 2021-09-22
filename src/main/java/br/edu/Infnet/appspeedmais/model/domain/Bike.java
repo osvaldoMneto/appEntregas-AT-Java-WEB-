@@ -2,7 +2,7 @@ package br.edu.Infnet.appspeedmais.model.domain;
 
 import javax.persistence.Entity;
 
-import br.edu.Infnet.appspeedmais.model.domain.Veiculo;
+
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroBikeException;
 
 @Entity
@@ -14,9 +14,12 @@ public class Bike extends Veiculo {
 	private String condutor;
 	
 	
+	public Bike() {
+		
+	}
 	
-	public Bike(String descricao, String ano) {
-		super(descricao, ano); 
+	public Bike(String descricao, String ano, String marca, String condutor) {
+		super( descricao, ano, marca, condutor);
 	}
 	
 

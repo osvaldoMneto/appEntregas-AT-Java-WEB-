@@ -1,15 +1,20 @@
 package br.edu.Infnet.appspeedmais.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroBikeException;
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroCarroException;
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroMotoException;
+
 
 
 @Entity
@@ -20,20 +25,25 @@ public  abstract class Veiculo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String descricao;
+	private String condutor;
 	private String ano;
 	private String marca;
-	
-	
+	@ManyToMany
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
+	@ManyToMany(mappedBy = "produtos")
+	private List<Pedido> pedidos;
 	
 
-	
-	
+	public Veiculo() {
+		
+	}
 
-	public Veiculo(String descricao, String ano) {
+	public Veiculo(String descricao, String ano, String marca, String condutor) {
 		this.descricao = descricao;
 		this.ano = ano;
 		this.marca = marca;
-		
+		this.condutor = condutor;
 	}
 	
 	public String verVeiculo() {
@@ -109,6 +119,30 @@ public  abstract class Veiculo {
 		this.marca = marca;
 	}
 
+	public String getCondutor() {
+		return condutor;
+	}
+
+	public void setCondutor(String condutor) {
+		this.condutor = condutor;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
+	
 	public abstract float valorDoServico() throws ErroBikeException, ErroCarroException, ErroMotoException;
 	
 	

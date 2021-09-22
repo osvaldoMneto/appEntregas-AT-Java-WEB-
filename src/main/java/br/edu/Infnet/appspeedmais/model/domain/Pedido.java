@@ -2,8 +2,13 @@ package br.edu.Infnet.appspeedmais.model.domain;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
-import org.springframework.core.style.ToStringCreator;
+import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 
 
@@ -13,7 +18,18 @@ public class Pedido {
 	private Cliente cliente;
 	private LocalDateTime data;
 	private int numeroPedido;
+	@OneToOne(cascade = CascadeType.DETACH)
+	@JoinColumn(name = "idSolicitante")
+	private Solicitante solicitante;
+	@ManyToMany(cascade = CascadeType.DETACH)	
+	private List<Veiculo> veiculos;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
 	
+	
+	
+
 	public Pedido() {
 		data = LocalDateTime.now();
 	}
@@ -69,7 +85,40 @@ public class Pedido {
 		return data;
 	}
 
-	
+	public Solicitante getSolicitante() {
+		return solicitante;
+	}
+
+
+	public void setSolicitante(Solicitante solicitante) {
+		this.solicitante = solicitante;
+	}
+
+
+	public List<Veiculo> getVeiculos() {
+		return veiculos;
+	}
+
+
+	public void setVeiculos(List<Veiculo> veiculos) {
+		this.veiculos = veiculos;
+	}
+
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
+
 
 }
 

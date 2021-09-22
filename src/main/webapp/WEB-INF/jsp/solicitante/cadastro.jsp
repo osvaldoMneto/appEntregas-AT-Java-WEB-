@@ -12,19 +12,24 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 
 	<div class="container">
-	  <h2>Cadastro de Bike</h2>
-	  <form action="/bike/incluir" method="post">
+	  <h2>Cadastro de Solicitantes</h2>
+	  <form action="/solicitante/incluir" method="post">
 
 	    <div class="form-group">
-	      <label>Marca::</label>
-	      <input type="text" class="form-control" placeholder="Entre com a descrição" name="marca">
+	      <label>Nome:</label>
+	      <input value="Osvaldo Carvalho" type="text" class="form-control" placeholder="Entre com o seu nome" name="nome">
 	    </div>
 
 	    <div class="form-group">
-	      <label>Condutor:</label>
-	      <input type="text" class="form-control" placeholder="Entre com a cor da bike" name="condutor">
+	      <label>Idade:</label>
+	      <input value="20" type="text" class="form-control" placeholder="Entre com a sua idade" name="idade">
 	    </div>
-		
+
+	    <div class="form-group">
+	      <label>E-mail:</label>
+	      <input value="osvaldocarvalhont@gmail.com" type="email" class="form-control" placeholder="Entre com o seu e-mail" name="email">
+	    </div>
+
 	    <button type="submit" class="btn btn-default">Cadastrar</button>
 	  </form>
 	</div>

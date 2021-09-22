@@ -1,8 +1,13 @@
 package br.edu.Infnet.appspeedmais.model.domain;
 
-import br.edu.Infnet.appspeedmais.model.domain.Veiculo;
+
+import javax.persistence.Entity;
+
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroCarroException;
 
+
+
+@Entity
 public class Carro extends Veiculo {
 
 	private int lugares;
@@ -10,10 +15,13 @@ public class Carro extends Veiculo {
 	private String mala;
 	private int nota;
 	
+	public Carro() {
+		
+	}
 	
-	public Carro(String descricao, String ano) {
-		super(descricao, ano);
-		// TODO Auto-generated constructor stub
+	public Carro(String descricao, String ano, String marca, String condutor) {
+		super(descricao, ano, marca,condutor);
+		
 	}
 	// TODO Auto-generated method stub
 	
@@ -58,9 +66,6 @@ public class Carro extends Veiculo {
 			 System.out.println("O valor do serviço é R$"+ valor2+ "Km");}
 		  
 		  
-		  
-		
-		
 		return valorDoServico();
 	}
 	
@@ -87,7 +92,6 @@ public class Carro extends Veiculo {
 	public void setMala(String mala) {
 		this.mala = mala;
 	}
-	
 	
 	
 }

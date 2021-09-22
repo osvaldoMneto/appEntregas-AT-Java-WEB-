@@ -1,5 +1,3 @@
-<%@page import="br.edu.Infnet.appspeedmais.model.domain.Bike"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -15,20 +13,20 @@
 
 	<div class="container">
 
-		<form action="/bike" method="get">
+		<form action="/pedido" method="get">
 			<button type="submit" class="btn btn-link">Incluir</button>
 		</form>
 		
 		<hr>
-		
-		<c:if test="${not empty bikes}">
-			<c:if test="${not empty msg}">
-				<div class="alert alert-success">
-				  <strong>Sucesso!</strong> ${msg}
-				</div>
-			</c:if>
 	
-			<h4>Quantidade de bikes existentes: ${bikes.size()}!!!</h4>
+		<c:if test="${not empty msg}">
+			<div class="alert alert-success">
+			  <strong>Sucesso!</strong> ${msg}
+			</div>
+		</c:if>
+
+		<c:if test="${not empty lista}">
+			<h4>Quantidade de pedidos existentes: ${lista.size()}!!!</h4>
 			
 			<hr>
 	
@@ -37,25 +35,27 @@
 		      <tr>
 		      	<th>Id</th>
 		        <th>Descrição</th>
-		        <th>Valor</th>
+		        <th>Solicitante</th>
+		        <th>Produtos</th>
 		        <th></th>
 		      </tr>
 		    </thead>
 		    <tbody>		    
-		    	<c:forEach var="b" items="${bikes}">
+		    	<c:forEach var="p" items="${lista}">
 			      <tr>
-			        <td>${b.id}</td>
-			        <td>${b.descricao}</td>
-			        <td>${b.valor}</td>
-			        <td><a href="/bike/${b.id}/excluir">Excluir</a></td>
+			        <td>${p.id}</td>
+			        <td>${p.descricao}</td>
+			        <td>${p.solicitante.nome}</td>
+			        <td>${p.produtos.size()}</td>
+			        <td><a href="/pedido/${p.id}/excluir">Excluir</a></td>
 			      </tr>
 		    	</c:forEach>
 		    </tbody>
 		  	</table>
 	  	</c:if>
 	  	
-	  	<c:if test="${empty bikes}">
-			<h4>Não existem bikes cadastradas!!!</h4>	  	
+	  	<c:if test="${empty lista}">
+			<h4>Não existem pedidos cadastrados!!!</h4>	  	
 	  	</c:if>
 	</div>
 </body>

@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
+
+
 @Entity
 public class Usuario {
 
@@ -20,9 +22,17 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private boolean admin;
+	@JoinColumn(name = "idEndereco")
+	private Endereco endereco;
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
-	private List<Aluno> alunos;
+	private List<Solicitante> solicitantes;
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idUsuario")
+	private List<Veiculo> veiculos;
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idUsuario")
+	private List<Pedido> pedidos;
 
 	public Integer getId() {
 		return id;
@@ -54,10 +64,30 @@ public class Usuario {
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
-	public List<Aluno> getAlunos() {
-		return alunos;
+	public Endereco getEndereco() {
+		return endereco;
 	}
-	public void setAlunos(List<Aluno> alunos) {
-		this.alunos = alunos;
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
+	public List<Solicitante> getSolicitantes() {
+		return solicitantes;
+	}
+	public void setSolicitantes(List<Solicitante> solicitantes) {
+		this.solicitantes = solicitantes;
+	}
+	public List<Veiculo> getVeiculos() {
+		return veiculos;
+	}
+	public void setVeiculos(List<Veiculo> veiculos) {
+		this.veiculos = veiculos;
+	}
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
+
+	
 }

@@ -1,17 +1,27 @@
 package br.edu.Infnet.appspeedmais.model.domain;
 
-import br.edu.Infnet.appspeedmais.model.domain.Veiculo;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroMotoException;
 
+
+@Entity
 public class Moto extends Veiculo {
-	
+	@Id
 	private int cilindradas;
 	private int nota;
 	private String placa;
 
-	public Moto(String descricao, String ano) {
-		super(descricao, ano);
-		// TODO Auto-generated constructor stub
+	public Moto() {
+		
+	}
+	
+	
+	public Moto(String descricao, String ano, String condutor, String marca) {
+		super(descricao, ano, condutor, marca);
+
 	}
 
 	

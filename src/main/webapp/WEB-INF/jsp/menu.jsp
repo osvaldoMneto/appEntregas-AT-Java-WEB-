@@ -8,9 +8,11 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
       <c:if test="${not empty user}">
-      	  <li><a href="/aluno/lista">Aluno</a></li>
+   
       	  <li><a href="/usuario/lista">Usuário</a></li>
-      	  <li><a href="/bebida/lista">Bebida</a></li>
+      	  <li><a href="/bike/lista">Bike</a></li>
+      	  <li><a href="/carro/lista">Carro</a></li>
+      	  <li><a href="/moto/lista">Moto</a></li>
       </c:if>
     </ul>
     <ul class="nav navbar-nav navbar-right">
