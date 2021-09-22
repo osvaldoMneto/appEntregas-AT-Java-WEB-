@@ -3,7 +3,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">AppPedido</a>
+      <a class="navbar-brand" href="#">SpeedMais</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
@@ -13,6 +13,10 @@
       	  <li><a href="/bike/lista">Bike</a></li>
       	  <li><a href="/carro/lista">Carro</a></li>
       	  <li><a href="/moto/lista">Moto</a></li>
+      	  <li><a href="/veiculo/lista">Veículo</a></li>
+      	  <li><a href="/pedido/lista">Pedido</a></li>
+      	  <li><a href="/solicitante/lista">Solicitante</a></li>
+      	  
       </c:if>
     </ul>
     <ul class="nav navbar-nav navbar-right">

@@ -36,7 +36,7 @@
 		      	<th>Id</th>
 		        <th>Descrição</th>
 		        <th>Solicitante</th>
-		        <th>Produtos</th>
+		        <th>Veiculos</th>
 		        <th></th>
 		      </tr>
 		    </thead>
@@ -46,7 +46,7 @@
 			        <td>${p.id}</td>
 			        <td>${p.descricao}</td>
 			        <td>${p.solicitante.nome}</td>
-			        <td>${p.produtos.size()}</td>
+			        <td>${p.veiculos.size()}</td>
 			        <td><a href="/pedido/${p.id}/excluir">Excluir</a></td>
 			      </tr>
 		    	</c:forEach>

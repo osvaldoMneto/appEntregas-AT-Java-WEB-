@@ -1,4 +1,4 @@
-<%@page import="br.edu.infnet.apppedido.model.domain.Aluno"%>
+<%@page import="br.edu.Infnet.appspeedmais.model.domain.Carro"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -32,7 +32,9 @@
 		      	<th>Id</th>
 		        <th>Nome</th>
 		        <th>E-mail</th>
-		        <th>Alunos</th>
+		        <th>Solicitantes</th>
+		        <th>Veículos</th>
+		        <th>Pedidos</th>
 		        <c:if test="${user.admin}">
 		        	<th></th>
 		        </c:if>
@@ -44,9 +46,17 @@
 			        <td>${u.id}</td>
 			        <td>${u.nome}</td>
 			        <td>${u.email}</td>
-			        <td>${u.alunos.size()}</td>
+			        <td>${u.solicitantes.size()}</td>
+			        <td>${u.veiculos.size()}</td>
+			        <td>${u.pedidos.size()}</td>
 			        <c:if test="${user.admin}">
-			        	<td><a href="/usuario/${u.id}/excluir">Excluir</a></td>
+			        	<td>
+							<c:choose>							
+								<c:when test = "${user.id != u.id}">
+									<a href="/usuario/${u.id}/excluir">Excluir</a>
+								</c:when>							
+							</c:choose>
+			        	</td>
 			      	</c:if>
 			      </tr>
 		    	</c:forEach>
@@ -57,6 +67,8 @@
 	  	<c:if test="${empty lista}">
 			<h4>Não existem usuários cadastrados!!!</h4>	  	
 	  	</c:if>
+		  	
+	  
 	</div>
 </body>
 </html>

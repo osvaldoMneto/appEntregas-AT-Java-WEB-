@@ -49,8 +49,9 @@ public class PedidoLoader implements ApplicationRunner {
 		veiculos.add(c1);
 		
 		Pedido pedido = new Pedido();
+		pedido.setSolicitante(solicitante);
+		pedido.setVeiculos(veiculos);
 		pedido.setDescricao("Meu pedido especial");
-	
 		pedido.setUsuario(usuario);
 		
 		

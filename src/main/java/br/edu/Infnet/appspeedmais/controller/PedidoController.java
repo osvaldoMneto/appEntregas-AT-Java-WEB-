@@ -20,6 +20,8 @@ import br.edu.Infnet.appspeedmais.model.service.VeiculoService;
 
 
 
+
+
 @Controller
 public class PedidoController {
 
@@ -56,7 +58,6 @@ public class PedidoController {
 		for(String id : veiculosId) {
 			veiculos.add(veiculoService.obterPorId(Integer.valueOf(id)));
 		}
-		
 		
 		
 		pedido.setVeiculos(veiculos);
