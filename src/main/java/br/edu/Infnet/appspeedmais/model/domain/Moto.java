@@ -4,6 +4,8 @@ package br.edu.Infnet.appspeedmais.model.domain;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import br.edu.Infnet.appspeedmais.model.exceptions.ErroBikeException;
+import br.edu.Infnet.appspeedmais.model.exceptions.ErroCarroException;
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroMotoException;
 
 
@@ -45,10 +47,12 @@ public class Moto extends Veiculo {
 	
 	}
 	
-	@Override
-	public float valorDoServico() throws ErroMotoException {
+	 
 		
-		if(nota == 0 || nota < 0 || nota > 10) {
+ @Override
+	public float valorDoServico() throws ErroCarroException, ErroBikeException, ErroMotoException {
+	 	if(nota == 0 || nota < 0 || nota > 10)
+	 	{
 			throw new ErroMotoException (" A Nota deve estar entre 1 e 10");
 			
 		}

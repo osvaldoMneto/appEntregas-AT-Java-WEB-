@@ -10,11 +10,11 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroBikeException;
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroCarroException;
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroMotoException;
-
 
 
 @Entity
@@ -28,10 +28,10 @@ public  abstract class Veiculo {
 	private String condutor;
 	private String ano;
 	private String marca;
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
-	@ManyToMany(mappedBy = "produtos")
+	@ManyToMany(mappedBy = "veiculos")
 	private List<Pedido> pedidos;
 	
 
@@ -55,13 +55,7 @@ public  abstract class Veiculo {
 		vec.append(";");
 		vec.append(marca);
 		vec.append(";");
-		try {
-			vec.append(valorDoServico());
-		} catch (ErroBikeException | ErroCarroException | ErroMotoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		vec.append("\r\n");
+	
 		
 		return vec.toString();
 		
@@ -127,6 +121,7 @@ public  abstract class Veiculo {
 		this.condutor = condutor;
 	}
 	
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -143,8 +138,12 @@ public  abstract class Veiculo {
 		this.pedidos = pedidos;
 	}
 	
-	public abstract float valorDoServico() throws ErroBikeException, ErroCarroException, ErroMotoException;
-	
+	public  void valordoServiço() {
+		
+		
+	}
+
+	public abstract float valorDoServico() throws ErroCarroException, ErroBikeException, ErroMotoException;
 	
 }    
 

@@ -26,7 +26,7 @@ public class VeiculoController {
 		return "veiculo/lista";
 	}	
 
-	@GetMapping(value = "/produto/{id}/excluir")
+	@GetMapping(value = "/veiculo/{id}/excluir")
 	public String excluir(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
 		
 		Veiculo veiculo = veiculoService.obterPorId(id);
@@ -34,7 +34,7 @@ public class VeiculoController {
 		String mensagem = null;
 		try {
 			veiculoService.excluir(id);		
-			mensagem = "O produto " + veiculo.getDescricao() + " foi removido com sucesso!!!";
+			mensagem = "O veículo " + veiculo.getDescricao() + " foi removido com sucesso!!!";
 		} catch (Exception e) {
 			mensagem = "Foi impossível realizar a exclusão do  "+ veiculo.getDescricao();
 		}

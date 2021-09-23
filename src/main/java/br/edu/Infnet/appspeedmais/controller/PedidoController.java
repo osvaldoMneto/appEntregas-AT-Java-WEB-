@@ -21,7 +21,6 @@ import br.edu.Infnet.appspeedmais.model.service.VeiculoService;
 
 
 
-
 @Controller
 public class PedidoController {
 
@@ -75,7 +74,7 @@ public class PedidoController {
 	
 	@GetMapping(value = "/pedido/{id}/excluir")
 	public String excluir(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
-
+		
 		Pedido pedido = pedidoService.obterPorId(id);
 		
 		pedidoService.excluir(id);

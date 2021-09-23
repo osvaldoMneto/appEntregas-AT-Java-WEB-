@@ -1,5 +1,7 @@
 package br.edu.Infnet.appspeedmais.model.domain;
 
+
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
 
 
 
@@ -34,8 +37,8 @@ public class Usuario {
 	private List<Veiculo> veiculos;
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
-	private List<Pedido> pedidos;
-
+	private List<Pedido>pedidos;
+	
 	public Integer getId() {
 		return id;
 	}

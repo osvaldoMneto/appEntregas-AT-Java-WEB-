@@ -16,7 +16,7 @@ import br.edu.Infnet.appspeedmais.model.service.MotoService;
 
 
 @Component
-public class ProdutoLoader implements ApplicationRunner {
+public class VeiculoLoader implements ApplicationRunner {
 	
 		private MotoService motoService;
 		@Autowired
@@ -35,7 +35,7 @@ public class ProdutoLoader implements ApplicationRunner {
 			b1.setMarca("Caloy");
 			b1.setCondutor("Raimundo");
 			b1.setUsuario(usuario);
-			
+		
 			bikeService.incluir(b1);
 
 			Carro c1 = new Carro("Fiesta", "Preto", "Chevrolet", "2010");
@@ -48,6 +48,7 @@ public class ProdutoLoader implements ApplicationRunner {
 			Moto m1 = new Moto("Titan", "Azul","Joao Agripino", "2010");
 			m1.setCilindradas(150);
 			m1.getCondutor();
+			m1.setUsuario(usuario);
 			
 			motoService.incluir(m1);
 		}

@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 
 
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroBikeException;
+import br.edu.Infnet.appspeedmais.model.exceptions.ErroCarroException;
+import br.edu.Infnet.appspeedmais.model.exceptions.ErroMotoException;
 
 @Entity
 public class Bike extends Veiculo {
@@ -47,8 +49,9 @@ public class Bike extends Veiculo {
 	
 
 	
+	
 	@Override
-	public float valorDoServico() throws ErroBikeException {
+	public float valorDoServico() throws ErroCarroException, ErroBikeException, ErroMotoException {
 		// TODO Auto-generated method stub
 		if(this.tempoporkm==0 || this.tempoporkm<0) {
 			throw new ErroBikeException (" tempo Invalido!");

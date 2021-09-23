@@ -29,6 +29,8 @@ public class PedidoLoader implements ApplicationRunner {
 	@Autowired
 	private PedidoService pedidoService;
 	
+	
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		

@@ -3,7 +3,9 @@ package br.edu.Infnet.appspeedmais.model.domain;
 
 import javax.persistence.Entity;
 
+import br.edu.Infnet.appspeedmais.model.exceptions.ErroBikeException;
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroCarroException;
+import br.edu.Infnet.appspeedmais.model.exceptions.ErroMotoException;
 
 
 
@@ -48,11 +50,16 @@ public class Carro extends Veiculo {
 	
 	}
 	
-	@Override
-	public float valorDoServico() throws ErroCarroException {
+ 
+		
+
 		// TODO Auto-generated method stub
 		
-		if(lugares!= 2 || lugares !=4 || lugares !=6) {
+		 @Override
+	public float valorDoServico() throws ErroMotoException, ErroBikeException, ErroCarroException {
+			 if(lugares!= 2 || lugares !=4 || lugares !=6)
+	
+	{
 			throw new ErroCarroException("Os Carros são somente  de 2, 4 e 6 lugares");
 		}
 		
@@ -95,4 +102,3 @@ public class Carro extends Veiculo {
 	
 	
 }
-

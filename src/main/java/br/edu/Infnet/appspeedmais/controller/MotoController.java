@@ -25,7 +25,7 @@ public class MotoController {
 	@GetMapping(value = "/moto/lista")
 	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 
-		model.addAttribute("moto", motoService.obterLista());
+		model.addAttribute("motos", motoService.obterLista());
 
 		return "moto/lista";
 	}
