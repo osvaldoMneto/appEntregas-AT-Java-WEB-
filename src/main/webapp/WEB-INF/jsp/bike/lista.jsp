@@ -36,8 +36,10 @@
 		    <thead>
 		      <tr>
 		      	<th>Id</th>
+		      	<td>Marca</td>
+		      	<td>Condutor</td>
 		        <th>Descrição</th>
-		        <th>Valor</th>
+		        <th></th>
 		        <th></th>
 		      </tr>
 		    </thead>
@@ -45,8 +47,10 @@
 		    	<c:forEach var="b" items="${bikes}">
 			      <tr>
 			        <td>${b.id}</td>
+			        <td>${b.marca}</td>
+			        <td>${b.condutor}</td>
 			        <td>${b.descricao}</td>
-			        <td>${b.valor}</td>
+			        <td>${b.cor }</td>
 			        <td><a href="/bike/${b.id}/excluir">Excluir</a></td>
 			      </tr>
 		    	</c:forEach>

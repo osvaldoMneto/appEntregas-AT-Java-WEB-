@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import br.edu.Infnet.appspeedmais.model.domain.Bike;
 import br.edu.Infnet.appspeedmais.model.domain.Carro;
+import br.edu.Infnet.appspeedmais.model.domain.Moto;
 import br.edu.Infnet.appspeedmais.model.domain.Pedido;
 import br.edu.Infnet.appspeedmais.model.domain.Solicitante;
 import br.edu.Infnet.appspeedmais.model.domain.Usuario;
@@ -30,7 +31,6 @@ public class PedidoLoader implements ApplicationRunner {
 	private PedidoService pedidoService;
 	
 	
-	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
@@ -41,14 +41,18 @@ public class PedidoLoader implements ApplicationRunner {
 		solicitante.setId(1);
 
 		Bike b1 = new Bike();
-		
+		b1.setId(1);
 
 		Carro c1 = new Carro();
 		c1.setId(2);
 		
+		Moto m1 = new Moto();
+		m1.setId(3);
+		
 		List<Veiculo> veiculos = new ArrayList<Veiculo>();
 		veiculos.add(b1);
 		veiculos.add(c1);
+		veiculos.add(m1);
 		
 		Pedido pedido = new Pedido();
 		pedido.setSolicitante(solicitante);

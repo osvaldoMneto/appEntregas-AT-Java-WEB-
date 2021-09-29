@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>APP2021 - Cadastra!!!</title>
+<title>APP2021 - Cadastra Pedidos!!!</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
@@ -38,8 +38,8 @@
 	    </div>	    
 		
 		<div class="form-group">			
-		<c:if test="${not empty produtos}">
-			<label>Vaiculo:</label>
+		<c:if test="${not empty veiculos}">
+			<label>Veiculo:</label>
 			<c:forEach var="v" items="${veiculos}">
 			  	<div class="form-check">
 					<label class="form-check-label">

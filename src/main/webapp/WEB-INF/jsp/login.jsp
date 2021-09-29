@@ -27,7 +27,7 @@
 
 	    <div class="form-group">
 	      <label>Senha:</label>
-	      <input value="osvaldocarvalhont@gmail.com" type="password" class="form-control" placeholder="Entre com a sua senha" name="senha">
+	      <input value="123" type="password" class="form-control" placeholder="Entre com a sua senha" name="senha">
 	    </div>
 
 	    <button type="submit" class="btn btn-default">Acessar</button>

@@ -10,7 +10,6 @@ import br.edu.Infnet.appspeedmais.model.exceptions.ErroMotoException;
 @Entity
 public class Bike extends Veiculo {
 	
-	
 	private  int tempoporkm;
 	private String cor;
 	private String condutor;

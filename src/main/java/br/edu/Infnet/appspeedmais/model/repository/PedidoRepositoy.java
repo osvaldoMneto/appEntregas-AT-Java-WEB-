@@ -9,9 +9,6 @@ import org.springframework.stereotype.Repository;
 import br.edu.Infnet.appspeedmais.model.domain.Pedido;
 
 
-
-
-
 @Repository
 public interface PedidoRepositoy extends CrudRepository<Pedido, Integer> {
 

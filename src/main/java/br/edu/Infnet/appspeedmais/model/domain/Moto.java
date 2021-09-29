@@ -2,7 +2,7 @@ package br.edu.Infnet.appspeedmais.model.domain;
 
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
+
 
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroBikeException;
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroCarroException;
@@ -11,7 +11,9 @@ import br.edu.Infnet.appspeedmais.model.exceptions.ErroMotoException;
 
 @Entity
 public class Moto extends Veiculo {
-	@Id
+	
+	
+
 	private int cilindradas;
 	private int nota;
 	private String placa;

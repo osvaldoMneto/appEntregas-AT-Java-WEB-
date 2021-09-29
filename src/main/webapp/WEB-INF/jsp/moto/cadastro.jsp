@@ -13,11 +13,11 @@
 
 	<div class="container">
 	  <h2>Cadastro de Motos</h2>
-	  <form action="/motos/incluir" method="post">
+	  <form action="/moto/incluir" method="post">
 
 	    <div class="form-group">
-	      <label>Nom do Condutor:</label>
-	      <input value="Elberth Moraes" type="text" class="form-control" placeholder="Entre com o nome do condutor" name="condutor">
+	      <label>Nome do Condutor:</label>
+	      <input value="Joaozinho" type="text" class="form-control" placeholder="Entre com o nome do condutor" name="condutor">
 	    </div>
 
 	    <div class="form-group">
@@ -33,7 +33,7 @@
 	    
 		<div class="form-group">
 		  <label>Cilidradas:</label>
-		  <select class="form-control" name="cilidradas">
+		  <select class="form-control" name="cilindradas">
 			<option>50</option>
 			<option>100</option>
 			<option selected="selected" >150</option>

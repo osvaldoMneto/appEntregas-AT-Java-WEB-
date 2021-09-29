@@ -3,6 +3,7 @@ package br.edu.Infnet.appspeedmais;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.Infnet.appspeedmais.model.domain.Bike;
@@ -16,8 +17,10 @@ import br.edu.Infnet.appspeedmais.model.service.MotoService;
 
 
 @Component
+@Order(3)
 public class VeiculoLoader implements ApplicationRunner {
-	
+	     
+	    @Autowired 
 		private MotoService motoService;
 		@Autowired
 		private BikeService bikeService;
@@ -45,7 +48,8 @@ public class VeiculoLoader implements ApplicationRunner {
 			
 			carroService.incluir(c1);
 			
-			Moto m1 = new Moto("Titan", "Azul","Joao Agripino", "2010");
+			Moto m1 = new Moto("Robusta", "21-","Joao Agripino", "Toshiba");
+			
 			m1.setCilindradas(150);
 			m1.getCondutor();
 			m1.setUsuario(usuario);

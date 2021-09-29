@@ -15,20 +15,21 @@
 
 	<div class="container">
 
-		<form action="/carro" method="get">
+		<form action="/moto" method="get">
 			<button type="submit" class="btn btn-link">Incluir</button>
 		</form>
 		
 		<hr>
 		
-		<c:if test="${not empty lista}">
-			<c:if test="${not empty msg}">
+		<c:if test="${not empty msg}">
 				<div class="alert alert-success">
 				  <strong>Sucesso!</strong> ${msg}
 				</div>
 			</c:if>
-	
-			<h4>Quantidade de carros existentes: ${lista.size()}!!!</h4>
+			
+			<c:if test="${not empty motos}">
+			
+			<h4>Quantidade de motos existentes: ${motos.size()}!!!</h4>
 			
 			<hr>
 	
@@ -39,31 +40,31 @@
 		        <th>Condutor</th>
 		        <th>descricao</th>
 		        <th>Ano</th>
-		        <th>Marca</th>
-		        <th>Lugares</th>
-		        <th>Mala</th>
+		        <th>cilindradas</th>
+		        <th></th>
+		        <th></th>
 		        <th></th>
 		      </tr>
 		    </thead>
 		    <tbody>		    
-		    	<c:forEach var="c" items="${lista}">
+		    	<c:forEach var="m" items="${motos}">
 			      <tr>
-			        <td>${c.id}</td>
-			        <td>${c.nome}</td>
-			        <td>${c.email}</td>
-			        <td>${c.idade}</td>
-			        <td>${c.curso}</td>
-			        <td>${c.regiao}</td>
-			        <td>${c.usuario.nome}</td>
-			        <td><a href="/carro/${c.id}/excluir">Excluir</a></td>
+			        <td>${m.id}</td>
+			        <td>${m.condutor}</td>
+			        <td>${m.descricao}</td>
+			        <td>${m.ano}</td>
+			        <td>${m.cilindradas}</td>
+			        <td></td>
+			     
+			        <td><a href="/moto/${m.id}/excluir">Excluir</a></td>
 			      </tr>
 		    	</c:forEach>
 		    </tbody>
 		  	</table>
 	  	</c:if>
 	  	
-	  	<c:if test="${empty lista}">
-			<h4>Não existem carros cadastrados!!!</h4>	  	
+	  	<c:if test="${empty motos}">
+			<h4>Não existem Motos cadastradas!!!</h4>	  	
 	  	</c:if>
 	</div>
 </body>

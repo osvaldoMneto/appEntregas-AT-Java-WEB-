@@ -19,8 +19,8 @@
 			</div>
 		</c:if>
 
-		<c:if test="${not empty produtos}">
-			<h4>Quantidade de produtos existentes: ${produtos.size()}!!!</h4>
+		<c:if test="${not empty veiculos}">
+			<h4>Quantidade de veiculos existentes: ${veiculos.size()}!!!</h4>
 			
 			<hr>
 	
@@ -28,28 +28,28 @@
 		    <thead>
 		      <tr>
 		      	<th>Id</th>
-		        <th>Descrição</th>
-		        <th>Valor</th>
-		        <th>Artesanal</th>
+		        <th>Descricao</th>
+		        <th>Condutor</th>
+		        <th>Marca</th>
 		        <th></th>
 		      </tr>
 		    </thead>
 		    <tbody>		    
-		    	<c:forEach var="p" items="${produtos}">
+		    	<c:forEach var="v" items="${veiculos}">
 			      <tr>
-			        <td>${p.id}</td>
-			        <td>${p.descricao}</td>
-			        <td>${p.valor}</td>
-			        <td>${p.artesanal}</td>
-			        <td><a href="/produto/${p.id}/excluir">Excluir</a></td>
+			        <td>${v.id}</td>
+			        <td>${v.descricao}</td>
+			        <td>${v.condutor}</td>
+			        <td>${v.marca}</td>
+			        <td><a href="/veiculo/${v.id}/excluir">Excluir</a></td>
 			      </tr>
 		    	</c:forEach>
 		    </tbody>
 		  	</table>
 	  	</c:if>
 	  	
-	  	<c:if test="${empty produtos}">
-			<h4>Não existem produtos cadastradas!!!</h4>	  	
+	  	<c:if test="${empty veiculos}">
+			<h4>Não existem veiculos cadastradas!!!</h4>	  	
 	  	</c:if>
 	</div>
 </body>

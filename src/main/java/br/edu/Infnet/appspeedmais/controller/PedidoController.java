@@ -36,7 +36,7 @@ public class PedidoController {
 				
 		model.addAttribute("solicitantes", solicitanteService.obterLista(usuario));
 		
-		model.addAttribute("produtos", veiculoService.obterLista(usuario));
+		model.addAttribute("veiculos", veiculoService.obterLista(usuario));
 
 		return "pedido/cadastro";
 	}	
@@ -79,7 +79,15 @@ public class PedidoController {
 		
 		pedidoService.excluir(id);
 		
-		String mensagem = "O pedido "+ pedido.getDescricao() +" foi removido com sucesso!!!";
+		String mensagem =null;
+		try {
+
+			pedidoService.excluir(id);
+			mensagem = " O pedido "+ pedido.getId() +" foi removido com sucesso!!!";
+		}catch (Exception e) {
+			mensagem = "Não foi possível exclui o  solicitante "+ pedido.getId();
+		}
+		
 		
 		model.addAttribute("msg", mensagem);
 

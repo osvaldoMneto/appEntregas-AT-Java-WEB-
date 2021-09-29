@@ -40,4 +40,10 @@ public class MotoService {
 	public Moto obterPorId(Integer id) {
 		return motoRepository.findById(id).orElse(null);
 	}
+	
+	public Integer obterQtde() {
+			
+			return (int) motoRepository.count();
+		}	
+	
 }

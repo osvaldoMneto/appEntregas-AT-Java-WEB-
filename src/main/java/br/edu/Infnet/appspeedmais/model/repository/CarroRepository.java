@@ -13,6 +13,6 @@ import br.edu.Infnet.appspeedmais.model.domain.Carro;
 @Repository
 public interface CarroRepository extends CrudRepository<Carro, Integer> {
 
-	@Query("from Comida c where c.usuario.id = :userId")
+	@Query("from Carro c where c.usuario.id = :userId")
 	public List<Carro> obterLista(Integer userId);
 }

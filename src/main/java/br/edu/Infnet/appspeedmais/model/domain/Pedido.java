@@ -26,7 +26,7 @@ public class Pedido {
 	@OneToOne(cascade = CascadeType.DETACH)
 	@JoinColumn(name = "idSolicitante")
 	private Solicitante solicitante;
-	@ManyToMany(cascade = CascadeType.DETACH)	
+	@ManyToMany(cascade = CascadeType.DETACH)
 	private List<Veiculo> veiculos;
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")

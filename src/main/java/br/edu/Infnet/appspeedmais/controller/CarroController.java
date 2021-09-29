@@ -44,7 +44,7 @@ public class CarroController {
 		return telaLista(model, usuario);
 	}
 	
-	@GetMapping(value = "/comida/{id}/excluir")
+	@GetMapping(value = "/carro/{id}/excluir")
 	public String excluir(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
 		
 		Carro carro = carroService.obterPorId(id);

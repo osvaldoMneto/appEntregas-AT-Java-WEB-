@@ -25,7 +25,7 @@
 			</div>
 		</c:if>
 
-		<c:if test="${not empty comidas}">
+		<c:if test="${not empty carros}">
 			<h4>Quantidade de carros existentes: ${carros.size()}!!!</h4>
 			
 			<hr>
@@ -38,7 +38,7 @@
 		        <th>descricao</th>
 		        <th>Ano</th>
 		        <th>Marca</th>
-		        <th>Lugares</th>
+		        <th>airberg</th>
 		        <th>Mala</th>
 		        <th></th>
 		      </tr>
@@ -51,7 +51,7 @@
 			        <td>${c.descricao}</td>
 			        <td>${c.ano}</td>
 			        <td>${c.marca}</td>
-			        <td>${c.lugares}</td>
+			        <td>${c.airberg}</td>
 			        <td>${c.mala}</td>
 			        <td><a href="/carro/${c.id}/excluir">Excluir</a></td>
 			      </tr>

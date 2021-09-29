@@ -1,3 +1,4 @@
+   
 package br.edu.Infnet.appspeedmais.model.service;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class CarroService {
 
 	@Autowired
 	private CarroRepository carroRepository;
+	
 
 	public List<Carro> obterLista(Usuario usuario) {
 		return (List<Carro>) carroRepository.obterLista(usuario.getId());
@@ -35,4 +37,10 @@ public class CarroService {
 	public Carro obterPorId(Integer id) {
 		return carroRepository.findById(id).orElse(null);
 	}
+	
+	public Integer obterQtde() {
+
+		return (int) carroRepository.count();
+	}
+
 }

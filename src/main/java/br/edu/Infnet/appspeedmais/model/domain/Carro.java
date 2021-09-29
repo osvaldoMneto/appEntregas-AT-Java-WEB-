@@ -11,7 +11,7 @@ import br.edu.Infnet.appspeedmais.model.exceptions.ErroMotoException;
 
 @Entity
 public class Carro extends Veiculo {
-
+	
 	private int lugares;
 	private boolean airberg;
 	private String mala;

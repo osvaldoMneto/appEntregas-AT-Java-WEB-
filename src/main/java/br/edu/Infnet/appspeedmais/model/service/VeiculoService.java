@@ -32,4 +32,10 @@ public class VeiculoService {
 	public Veiculo obterPorId(Integer id) {
 		return veiculoRepository.findById(id).orElse(null);
 	}
+
+	public Integer obterQtde() {
+
+		return (int) veiculoRepository.count();
+	}
+
 }

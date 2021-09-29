@@ -15,12 +15,17 @@
 	  <h3>Java WEB</h3>
 	  <h4>AT</h4>	  
 		<ul class="list-group">
-	    <li class="list-group-item">Usuário <span class="badge">12</span></li>
-	    <li class="list-group-item">Solicitante <span class="badge">5</span></li>
-	    <li class="list-group-item">Bike <span class="badge">3</span></li>
-	    <li class="list-group-item">Carro <span class="badge">12</span></li>
-	    <li class="list-group-item">Moto <span class="badge">5</span></li>
-	    <li class="list-group-item">Pedido <span class="badge">3</span></li>
+			<c:forEach var =" mapa" items ="${totalizacao}">
+			 	<li class="list-group-item">${mapa.key} <span class="badge">${mapa.usuarioQtde}</span></li>
+			</c:forEach>
+		
+		
+	    <li class="list-group-item">${key} <span class="badge">${usuarioQtde}</span></li>
+<!-- 	    <li class="list-group-item">Solicitante <span class="badge">5</span></li> -->
+<!-- 	    <li class="list-group-item">Bike <span class="badge">3</span></li> -->
+<!-- 	    <li class="list-group-item">Carro <span class="badge">12</span></li> -->
+<!-- 	    <li class="list-group-item">Moto <span class="badge">5</span></li> -->
+<!-- 	    <li class="list-group-item">Pedido <span class="badge">3</span></li> -->
 	  	</ul>
 	</div>
 

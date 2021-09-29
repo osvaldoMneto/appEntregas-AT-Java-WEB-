@@ -22,8 +22,19 @@
 
 	    <div class="form-group">
 	      <label>Condutor:</label>
-	      <input type="text" class="form-control" placeholder="Entre com a cor da bike" name="condutor">
+	      <input type="text" class="form-control" placeholder="Entre com o condutor da bike" name="condutor">
 	    </div>
+		
+		<div class="form-group">
+	      <label>Descricao:</label>
+	      <input type="text" class="form-control" placeholder="Entre coma descricao da bike" name="descricao">
+	    </div>
+		
+		<div class="form-group">
+	      <label>Cor:</label>
+	      <input type="text" class="form-control" placeholder="Entre coma descricao da bike" name="cor">
+	    </div>
+		
 		
 	    <button type="submit" class="btn btn-default">Cadastrar</button>
 	  </form>

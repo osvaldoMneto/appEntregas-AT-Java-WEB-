@@ -2,6 +2,7 @@ package br.edu.Infnet.appspeedmais.model.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
 
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroBikeException;
 import br.edu.Infnet.appspeedmais.model.exceptions.ErroCarroException;
@@ -31,7 +33,8 @@ public  abstract class Veiculo {
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
-	@ManyToMany(mappedBy = "veiculos")
+	
+	@ManyToMany(mappedBy ="veiculos")
 	private List<Pedido> pedidos;
 	
 
@@ -71,8 +74,6 @@ public  abstract class Veiculo {
 		vec.append(";");
 		vec.append(marca);
 		
-		
-		
 		return vec.toString();
 	}
 	
@@ -88,10 +89,7 @@ public  abstract class Veiculo {
 	}
 	public String getMarca() {
 		return marca;
-	}
-	
-	
-	
+	}	
 	
 	public Integer getId() {
 		return id;
@@ -99,6 +97,10 @@ public  abstract class Veiculo {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public String getdescricao() {
+		return descricao;
 	}
 
 	public void setDescricao(String descricao) {
