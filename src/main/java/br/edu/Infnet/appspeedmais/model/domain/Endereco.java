@@ -17,6 +17,12 @@ public class Endereco {
 	private String bairro;
 	private String localidade;
 	private String uf;
+	
+	public Endereco() {
+		
+	}
+	
+	
 
 	public Integer getId() {
 		return id;

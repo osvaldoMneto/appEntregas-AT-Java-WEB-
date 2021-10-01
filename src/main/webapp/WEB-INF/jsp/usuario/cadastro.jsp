@@ -45,7 +45,7 @@
 	      <input type="password" class="form-control" placeholder="Entre com a sua senha" name="senha">
 	    </div>	
 	    
-	    <c:import url="WEB-INF/jsp/endereco.jsp"/>
+		<c:import url="/WEB-INF/jsp/endereco.jsp"/>
 
 	    <button type="submit" class="btn btn-default">Cadastrar</button>
 	    

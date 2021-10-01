@@ -16,6 +16,6 @@ public class EnderecoService {
 
 	public Endereco obterCep(String cep) {
 
-		return enderecoClient.obterCep(cep);
+		return enderecoClient.obterCep(cep); 
 	}
 }
