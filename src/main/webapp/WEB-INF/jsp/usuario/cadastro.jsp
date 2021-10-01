@@ -18,6 +18,16 @@
 		</c:if>
 	
 	  <h2>Cadastramento de usuários</h2>
+	  
+	   <form action="/cep" class="form-inline" method="post">
+		<div class="form-group col-md-2">
+			<label>Cep:</label>
+			<input type="text" class="form-control" value="${meuEndereco.cep}" placeholder="Entre com o seu cep" name="cep">
+		</div>
+	  
+		 <button type="submit" class="btn btn-primary">Buscar</button>
+	  </form>
+	  	
 	  <form action="/usuario" method="post">
 
 	    <div class="form-group">
@@ -33,7 +43,9 @@
 	    <div class="form-group">
 	      <label>Senha:</label>
 	      <input type="password" class="form-control" placeholder="Entre com a sua senha" name="senha">
-	    </div>
+	    </div>	
+	    
+	    <c:import url="WEB-INF/jsp/endereco.jsp"/>
 
 	    <button type="submit" class="btn btn-default">Cadastrar</button>
 	    

@@ -35,9 +35,12 @@ public class VeiculoController {
 		try {
 			veiculoService.excluir(id);		
 			mensagem = "O veículo " + veiculo.getDescricao() + " foi removido com sucesso!!!";
+			
 		} catch (Exception e) {
+			
 			mensagem = "Foi impossível realizar a exclusão do  "+ veiculo.getDescricao();
 		}
+		
 		model.addAttribute("msg", mensagem);
 		
 		return telaLista(model, usuario);

@@ -31,7 +31,7 @@
 	    </div>
 		
 	    <div class="form-group">
-	      <label>Nota:</label>
+	      <label>Marca:</label>
 	      <input type="text" value="4" class="form-control" placeholder="Entre com a nota do Serviço" name="marca">
 	    </div>
 

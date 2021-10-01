@@ -13,7 +13,8 @@
 
 	<div class="container">
 
-		<c:if test="${not empty msg}">
+		<c:if test="${not empty veiculos}"/>
+		<c:if test="${not empty msg }">
 			<div class="alert alert-success">
 			  <strong>Sucesso!</strong> ${msg}
 			</div>
@@ -30,7 +31,8 @@
 		      	<th>Id</th>
 		        <th>Descricao</th>
 		        <th>Condutor</th>
-		        <th>Marca</th>
+		        <th>Ano</th>
+		         <th>Marca</th>
 		        <th></th>
 		      </tr>
 		    </thead>
@@ -40,7 +42,9 @@
 			        <td>${v.id}</td>
 			        <td>${v.descricao}</td>
 			        <td>${v.condutor}</td>
+			        <td>${v.ano}</td>
 			        <td>${v.marca}</td>
+			        <td>${v.usuario.nome}</td>
 			        <td><a href="/veiculo/${v.id}/excluir">Excluir</a></td>
 			      </tr>
 		    	</c:forEach>

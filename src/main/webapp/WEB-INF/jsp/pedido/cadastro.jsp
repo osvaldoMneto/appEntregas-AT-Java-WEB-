@@ -34,7 +34,7 @@
 
 	    <div class="form-group">
 	      <label>Descrição:</label>
-	      <input value="Primeiro pedido" type="text" class="form-control" placeholder="Entre com a descrição" name="descricao">
+	      <input value="Primeiro pedido" type="text" class="form-control" placeholder="Entre com a descrição do pedido" name="descricao">
 	    </div>	    
 		
 		<div class="form-group">			

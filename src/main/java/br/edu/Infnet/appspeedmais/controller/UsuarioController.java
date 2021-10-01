@@ -39,7 +39,7 @@ public class UsuarioController {
 		
 		usuarioService.incluir(usuario);
 		
-		return "redirect:/";
+		return "redirect:/usuario";
 	}
 
 	@GetMapping(value = "/usuario/{id}/excluir")

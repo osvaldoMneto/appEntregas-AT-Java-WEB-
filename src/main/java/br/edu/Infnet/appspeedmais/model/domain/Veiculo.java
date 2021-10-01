@@ -2,7 +2,7 @@ package br.edu.Infnet.appspeedmais.model.domain;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,21 +33,20 @@ public  abstract class Veiculo {
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
-	
 	@ManyToMany(mappedBy ="veiculos")
 	private List<Pedido> pedidos;
 	
 
 	public Veiculo() {
-		
-	}
-
-	public Veiculo(String descricao, String ano, String marca, String condutor) {
-		this.descricao = descricao;
-		this.ano = ano;
-		this.marca = marca;
-		this.condutor = condutor;
-	}
+			
+		}
+	
+		public Veiculo(String descricao, String ano, String marca, String condutor) {
+			this.descricao = descricao;
+			this.ano = ano;
+			this.marca = marca;
+			this.condutor = condutor;
+		}
 	
 	public String verVeiculo() {
 		

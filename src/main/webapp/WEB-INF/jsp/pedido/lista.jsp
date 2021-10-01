@@ -38,6 +38,8 @@
 		        <th>Solicitante</th>
 		        <th>Veiculos</th>
 		        <th></th>
+		        <th></th>
+		  
 		      </tr>
 		    </thead>
 		    <tbody>		    
@@ -46,7 +48,7 @@
 			        <td>${p.id}</td>
 			        <td>${p.descricao}</td>
 			        <td>${p.solicitante.nome}</td>
-			        <td>${p.veiculos.size()}</td>
+			        <td>${p.veiculos.size()}</td>       
 			        <td><a href="/pedido/${p.id}/excluir">Excluir</a></td>
 			      </tr>
 		    	</c:forEach>
